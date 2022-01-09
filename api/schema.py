@@ -32,7 +32,7 @@ class BookType(DjangoObjectType):
 
 class Query(graphene.ObjectType):
     books = graphene.List(BookType,id = graphene.ID(),name = graphene.String())
-    all_category = DjangoListField(CategoryType)
+    # all_category = DjangoListField(CategoryType)
     all_authors = DjangoFilterConnectionField(AuthorNode)
 
     def resolve_books(self,info,id=None,name = None):
